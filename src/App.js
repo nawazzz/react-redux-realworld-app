@@ -13,9 +13,27 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
+        allFeed: {},
+        isLoading: false      
     } 
   }
+  componentDidMount() {
+    this.setState({
+      isLoading: true
+    })
+    const url = `https://conduit.productionready.io/api/articles`;
+    fetch(url).then(res => res.json()).then(data => {
+      this.setState({
+        allFeed: data,
+        isLoading: false
+      })
+    }).catch(error => console.log(error))
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.allFeed)
+  }
+
   render() {
     return (
       <Router>
@@ -30,7 +48,7 @@ class App extends React.Component {
           </div> 
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home allFeed={this.state.allFeed} isLoading={this.state.isLoading}/>
             </Route>
             <Route exact path="/login">
               <SignIn />
