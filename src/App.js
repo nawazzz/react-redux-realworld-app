@@ -8,13 +8,15 @@ import {
   Switch, Route
 } from "react-router-dom"
 import React from 'react';
+// import { info } from 'node-sass';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
         allFeed: {},
-        isLoading: false      
+        isLoading: false,
+        allTags: {}  
     } 
   }
   componentDidMount() {
@@ -22,16 +24,22 @@ class App extends React.Component {
       isLoading: true
     })
     const url = `https://conduit.productionready.io/api/articles`;
+    const tagUrl = `https://conduit.productionready.io/api/tags`
     fetch(url).then(res => res.json()).then(data => {
       this.setState({
         allFeed: data,
         isLoading: false
       })
     }).catch(error => console.log(error))
+    fetch(tagUrl).then(res => res.json()).then(info => {
+      this.setState({
+        allTags: info
+      })
+    }).catch(error => console.log(error))
   }
 
   componentDidUpdate() {
-    console.log(this.state.allFeed)
+    console.log(this.state.allTags)
   }
 
   render() {
@@ -48,7 +56,9 @@ class App extends React.Component {
           </div> 
           <Switch>
             <Route exact path="/">
-              <Home allFeed={this.state.allFeed} isLoading={this.state.isLoading}/>
+              <Home allFeed={this.state.allFeed} isLoading={this.state.isLoading} 
+              allTags={this.state.allTags}
+              />
             </Route>
             <Route exact path="/login">
               <SignIn />

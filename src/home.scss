@@ -47,13 +47,26 @@ table {
 	border-spacing: 0;
 }
 // ......................................
+
+.mainContainerHomePage{
+  width: 73%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.popularTagContainer{
+  width: 27%;
+}
 .globalFeedContainer{
   width: 70%;
   margin: 0 auto;
 }
+
 .containerToAddFlexInGlobalFeed{
   display: flex;
   justify-content: space-between;
+  width: 90%;
 }
 .likesContainer{
   width: 30px;
