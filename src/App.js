@@ -16,7 +16,7 @@ class App extends React.Component {
     this.state = {
         allFeed: {},
         isLoading: false,
-        allTags: {}  
+        allTags: ["HuManity", "Gandhi", "HITLER", "SIDA", "BlackLivesMatter", "test", "dragons", "Wimp", "India"] 
     } 
   }
   componentDidMount() {
@@ -24,18 +24,18 @@ class App extends React.Component {
       isLoading: true
     })
     const url = `https://conduit.productionready.io/api/articles`;
-    const tagUrl = `https://conduit.productionready.io/api/tags`
+    // const tagUrl = `https://conduit.productionready.io/api/tags`
     fetch(url).then(res => res.json()).then(data => {
       this.setState({
         allFeed: data,
         isLoading: false
       })
     }).catch(error => console.log(error))
-    fetch(tagUrl).then(res => res.json()).then(info => {
-      this.setState({
-        allTags: info
-      })
-    }).catch(error => console.log(error))
+    // fetch(tagUrl).then(res => res.json()).then(allTags => {
+    //   this.setState({
+    //     allTags: allTags.tags.filter(tag => !tag.startsWith("&zwnj;") && !tag.includes("&zwnj;"))
+    //   })
+    // }).catch(error => console.log(error))
   }
 
   componentDidUpdate() {

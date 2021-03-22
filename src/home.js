@@ -19,12 +19,12 @@ class Home extends React.Component {
               </div>
             ) : (
               <div>
-              {this.props.allTags?.tags && this.props.allTags.tags.map((elm, index) => {
-                return(
-                  <div>
-                    <p>{elm}</p>
-                  </div>
-                )
+              {this.props.allTags.map((elm, index) => {
+                  return(
+                    <div>
+                      <p className="tagElement">{elm}</p>
+                    </div>
+                  )                
               })}
               </div>
             )}
