@@ -12,13 +12,13 @@ class Home extends React.Component {
         </div>
         <div className="mainContainerHomePage">
           <div className="popularTagContainer mt-6">
-            <h4>Popular Tags</h4>
+            <h4 className="popularTags">Popular Tags</h4>
             {this.props.isLoading === true ? (
               <div>
                 <h4>Loading Tags...</h4>
               </div>
             ) : (
-              <div>
+              <div className="tagContainer">
               {this.props.allTags.map((elm, index) => {
                   return(
                     <div>
