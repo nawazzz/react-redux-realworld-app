@@ -48,7 +48,7 @@ class Home extends React.Component {
                   {this.props.allFeed?.articles && this.props.allFeed.articles.map((elm, index) => {
                 return(
                     <div className="containerToAddFlexInGlobalFeed">
-                      <div>
+                      <div className="feedsContainer">
                         <div style={{display:"flex"}}>
                           <div className="image is-32x32">
                             <img src={elm.author.image || smiley} className="is-rounded" />
@@ -59,9 +59,12 @@ class Home extends React.Component {
                           </div>
                         </div>
                         <div>
-                          <h3 className="title is-4 pt-2">{elm.title}</h3>
-                          <p>{elm.description}</p>
-                          <a href="/">Read More...</a>
+                          <h3 className="title is-4 pt-2 mb-1">{elm.title}</h3>
+                          <p className="title is-6 has-text-weight-light tagElementColor">{elm.description}</p>
+                          <a href="/" className="is-size-7 tagElementColor">Read More...</a>
+                        </div>
+                        <div>
+                          <p className="globalFeedGreyLineTwo"></p>
                         </div>
                       </div>
                       <div className="likesContainer">

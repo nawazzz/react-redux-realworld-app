@@ -16,7 +16,7 @@ class App extends React.Component {
     this.state = {
         allFeed: {},
         isLoading: false,
-        allTags: ["HuManity", "Gandhi", "HITLER", "SIDA", "BlackLivesMatter", "test", "dragons", "Covid-19", "India", "Vaccination", "Sons Of Anarchy", "Banshee", "Vikings"] 
+        allTags: [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "HuManity", "Gandhi", "HITLER", "SIDA", "BlackLivesMatter", "test", "dragons", "Covid-19", "India", "Vaccination", "SonsOfAnarchy", "Banshee", "Vikings"] 
     } 
   }
   componentDidMount() {

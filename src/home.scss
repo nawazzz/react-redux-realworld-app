@@ -72,14 +72,16 @@ table {
     flex-wrap: wrap;
     line-height: 1;
     .tagElement{
-      // border: 1px solid black;
+      text-align: center;
       padding: 5px;
       cursor: pointer;
       background: #818a91;
       color: white;
       border-radius: 10px;
-      margin: 2px;
+      margin: 3px 6px 3px 6px;
       font-size: 14px;
+      height: 24px;
+      width: 94%;
     }
   }
 }
@@ -93,6 +95,13 @@ table {
   display: flex;
   justify-content: space-between;
   width: 90%;
+  .feedsContainer{
+    .globalFeedGreyLineTwo{
+      height: 1px;
+      width: 679px;
+      background: rgb(204, 200, 200);
+    }
+  }
 }
 .likesContainer{
   width: 30px;
@@ -123,6 +132,10 @@ table {
 }
 .globalFeedGreyLine{
   height: 1px;
-  width: 500px;
+  width: 579px;
   background: rgb(204, 200, 200);
+}
+
+.tagElementColor{
+  color: rgb(143, 135, 135);
 }
